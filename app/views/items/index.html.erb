@@ -1,2 +1,9 @@
 <h1>Meine Aufgaben</h1>
-<p>Neue Aufgaben einfügen</p>
+<button type="button" class="btn btn-default"><%= link_to "Neue Aufgabe", new_item_path %></button>
+<hr> <!-- fügt eine horizontale Trennlinie ein-->
+
+<!--eine Schleife, welche alle Einträge aus der Datenbank ausgibt -->
+<% @items.each do |item| %>
+  <h2><%= item.title %></h2>
+  <p><%= item.description %></p>
+<%  end %>
